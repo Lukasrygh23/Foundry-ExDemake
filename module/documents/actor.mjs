@@ -48,13 +48,6 @@ export class DemakeActor extends Actor {
     // Make modifications to data here. For example:
     const systemData = actorData.system;
 
-    // Loop through ability scores, and add their modifiers to our sheet output.
-SystemChanges
-    //for (let [key, ability] of Object.entries(systemData.abilities)) {
-    //   Calculate the modifier using d20 rules.
-    //  ability.mod = Math.floor((ability.value - 10) / 2);
-    // }
-    //TODO REMOVE THIS
   }
 
   /**
@@ -87,11 +80,11 @@ SystemChanges
 
     // Copy the ability scores to the top level, so that rolls can use
     // formulas like `@str.mod + 4`.
-    if (data.abilities) {
-      for (let [k, v] of Object.entries(data.abilities)) {
-        data[k] = foundry.utils.deepClone(v);
-      }
-    }
+    //if (data.abilities) {
+    //  for (let [k, v] of Object.entries(data.abilities)) {
+    //    data[k] = foundry.utils.deepClone(v);
+    //  }
+    //}
 
     // Add level for easier access, or fall back to 0. TODO REMOVE THIS.
     if (data.attributes.level) {

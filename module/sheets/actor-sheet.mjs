@@ -46,7 +46,7 @@ export class DemakeActorSheet extends ActorSheet {
     }
 
     // Prepare NPC data and items.
-    if (actorData.type == 'npc') {
+    if (actorData.type == 'antagonist') {
       this._prepareItems(context);
     }
 
