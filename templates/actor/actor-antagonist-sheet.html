@@ -32,11 +32,9 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.cr" class="resource-label">CR / XP</label>
+          <label for="system.cr" class="resource-label"> Essence </label>
           <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.cr" value="{{system.cr}}" data-dtype="Number"/>
-            <span> / </span>
-            <input type="text" disabled="true" name="system.xp" value="{{system.xp}}" data-dtype="Number"/>
+            <input type="text" name="system.essence.value" value="{{system.essence.value}}" data-dtype="Number"/>
           </div>
         </div>
 
@@ -63,12 +61,12 @@
 
     {{!-- Owned Items Tab --}}
     <div class="tab items" data-group="primary" data-tab="items">
-       {{> "systems/boilerplate/templates/actor/parts/actor-items.html"}}
+       {{> "systems/exdemake/templates/actor/parts/actor-items.html"}}
     </div>
 
     {{!-- Active Effects Tab --}}
     <div class="tab effects flexcol" data-group="primary" data-tab="effects">
-      {{> "systems/boilerplate/templates/actor/parts/actor-effects.html"}}
+      {{> "systems/exdemake/templates/actor/parts/actor-effects.html"}}
     </div>
 
   </section>

@@ -79,14 +79,14 @@ export class DemakeActor extends Actor {
 
     // Add Essence as a shorthand, or fallback to 0. 
     if (data.essence) {
-      data.essence = data.essence.value ?? 0;
+      data.essence = data.essence.value ?? 1;
     }
   }
 
   _getAntagonistRollData(data) {
     if (this.type !== 'antagonist') return;
-    if (data.base.essence) {
-      data.essence = data.base.essence.value ?? 0;
+    if (data.essence) {
+      data.essence = data.essence.value ?? 1;
     }
     //Nothing here yet. 
 
