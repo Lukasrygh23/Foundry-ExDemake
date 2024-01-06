@@ -2,7 +2,7 @@
  * Extend the base Actor document by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
  */
-export class DemakeActor extends Actor {
+export class BoilerplateActor extends Actor {
 
   /** @override */
   prepareData() {
@@ -31,7 +31,7 @@ export class DemakeActor extends Actor {
   prepareDerivedData() {
     const actorData = this;
     const systemData = actorData.system;
-    const flags = actorData.flags.demake || {};
+    const flags = actorData.flags.boilerplate || {};
 
     // Make separate methods for each Actor type (character, npc, etc.) to keep
     // things organized.
@@ -49,6 +49,7 @@ export class DemakeActor extends Actor {
     const systemData = actorData.system;
 
     // Loop through ability scores, and add their modifiers to our sheet output.
+SystemChanges
     //for (let [key, ability] of Object.entries(systemData.abilities)) {
     //   Calculate the modifier using d20 rules.
     //  ability.mod = Math.floor((ability.value - 10) / 2);
@@ -56,13 +57,13 @@ export class DemakeActor extends Actor {
     //TODO REMOVE THIS
   }
 
- 
   /**
    * Prepare Antagonist Specific Data
    */
   
   _prepareAntagonistData(actorData) {
     if (actorData.type !== 'antagonist') return;
+
 
   }
 
@@ -97,6 +98,7 @@ export class DemakeActor extends Actor {
     if (data.attributes.level) {
       data.lvl = data.attributes.level.value ?? 0;
     }
+SystemChanges
     // Add Essence as a shorthand, or fallback to 0. 
     if (data.base.essence) {
       data.essence = data.base.essence.value ?? 0;
@@ -110,6 +112,8 @@ export class DemakeActor extends Actor {
     }
     //Nothing here yet. 
 
+
+    // Process additional NPC data here.
   }
 
 }
