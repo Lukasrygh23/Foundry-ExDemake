@@ -224,12 +224,8 @@
 }
 
 /* Styles limited to boilerplate sheets */
-.ExDemake {
-  /* ----------------------------------------- */
-  /*  Items Lists                              */
-  /* ----------------------------------------- */
-  /* Example style for Boilerplate (can be removed if not needed) */
-}
+/* .ExDemake {
+} */
 .ExDemake .item-form {
   font-family: "Roboto", sans-serif;
 }
