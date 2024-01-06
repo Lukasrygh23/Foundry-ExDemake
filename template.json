@@ -25,7 +25,14 @@
       }
     },
     "antagonist": {
-      "templates": ["base"]
+      "templates": ["base"],
+      "ratings": {
+        "expertise": {
+        },
+        "utility": {
+        },
+        "aptitudes": ""
+      }
     }
   },
   "Item": {
