@@ -1,22 +1,22 @@
 {
-  "BOILERPLATE.AbilityStr": "Strength",
-  "BOILERPLATE.AbilityCon": "Constitution",
-  "BOILERPLATE.AbilityDex": "Dexterity",
-  "BOILERPLATE.AbilityInt": "Intelligence",
-  "BOILERPLATE.AbilityWis": "Wisdom",
-  "BOILERPLATE.AbilityCha": "Charisma",
+  "DEMAKE.AbilityStr": "Strength",
+  "DEMAKE.AbilityCon": "Constitution",
+  "DEMAKE.AbilityDex": "Dexterity",
+  "DEMAKE.AbilityInt": "Intelligence",
+  "DEMAKE.AbilityWis": "Wisdom",
+  "DEMAKE.AbilityCha": "Charisma",
 
-  "BOILERPLATE.AbilityStrAbbr": "str",
-  "BOILERPLATE.AbilityConAbbr": "con",
-  "BOILERPLATE.AbilityDexAbbr": "dex",
-  "BOILERPLATE.AbilityIntAbbr": "int",
-  "BOILERPLATE.AbilityWisAbbr": "wis",
-  "BOILERPLATE.AbilityChaAbbr": "cha",
+  "DEMAKE.AbilityStrAbbr": "str",
+  "DEMAKE.AbilityConAbbr": "con",
+  "DEMAKE.AbilityDexAbbr": "dex",
+  "DEMAKE.AbilityIntAbbr": "int",
+  "DEMAKE.AbilityWisAbbr": "wis",
+  "DEMAKE.AbilityChaAbbr": "cha",
 
-  "BOILERPLATE.EffectCreate": "Create Effect",
-  "BOILERPLATE.EffectToggle": "Toggle Effect",
-  "BOILERPLATE.EffectEdit": "Edit Effect",
-  "BOILERPLATE.EffectDelete": "Delete Effect",
+  "DEMAKE.EffectCreate": "Create Effect",
+  "DEMAKE.EffectToggle": "Toggle Effect",
+  "DEMAKE.EffectEdit": "Edit Effect",
+  "DEMAKE.EffectDelete": "Delete Effect",
 
-  "BOILERPLATE.Add": "Add"
+  "DEMAKE.Add": "Add"
 }
