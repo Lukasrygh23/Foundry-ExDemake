@@ -215,8 +215,9 @@ export class DemakeActorSheet extends ActorSheet {
 
     // Handle rolls that supply the formula directly.
     if (dataset.roll) {
-      let label = dataset.label ? `[ability] ${dataset.label}` : '';
+
       let roll = new Roll(dataset.roll, this.actor.getRollData());
+      let label = dataset.label ? `Rolling ${dataset.label}` : '';
       roll.toMessage({
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
         flavor: label,
