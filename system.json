@@ -37,14 +37,12 @@
   "packs": [],
   "packFolders": [],
   "socket": false,
-SystemChanges
+
   "manifest": "https://github.com/Lukasrygh23/Foundry-ExDemake/blob/SystemChanges/system.json",
   "download": "This must link to a .zip file of the current version. Doesn't yet.",
   "background": "systems/ExDemake/assets/anvil-impact.png",
   "gridDistance": 1,
   "gridUnits": "yd",
-
-master
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "power"
 }
