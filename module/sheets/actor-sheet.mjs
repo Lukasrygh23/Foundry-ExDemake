@@ -10,7 +10,7 @@ export class DemakeActorSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["ExDemake", "sheet", "actor"],
-      template: "systems/ExDemake/templates/actor/actor-sheet.html",
+      template: "systems/exDemake/templates/actor/actor-sheet.html",
       width: 600,
       height: 600,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }]
@@ -68,9 +68,9 @@ export class DemakeActorSheet extends ActorSheet {
    */
   _prepareCharacterData(context) {
     // Handle ability scores.
-    for (let [k, v] of Object.entries(context.system.abilities)) {
-      v.label = game.i18n.localize(CONFIG.DEMAKE.abilities[k]) ?? k;
-    }
+    //for (let [k, v] of Object.entries(context.system.abilities)) {
+    //  v.label = game.i18n.localize(CONFIG.DEMAKE.abilities[k]) ?? k;
+    //}
   }
 
   /**

@@ -16,7 +16,7 @@ Hooks.once('init', async function () {
 
   // Add utility classes to the global game object so that they're more easily
   // accessible in global contexts.
-  game.demake = {
+  game.ExDemake = {
     DemakeActor,
     DemakeItem,
     rollItemMacro
@@ -41,9 +41,9 @@ Hooks.once('init', async function () {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("demake", DemakeActorSheet, { makeDefault: true });
+  Actors.registerSheet("exdemake", DemakeActorSheet, { makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("demake", DemakeItemSheet, { makeDefault: true });
+  Items.registerSheet("exdemake", DemakeItemSheet, { makeDefault: true });
 
   // Preload Handlebars templates.
   return preloadHandlebarsTemplates();
