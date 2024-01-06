@@ -1,26 +1,18 @@
 {
   "Actor": {
-    "types": ["character", "npc", "antagonist"],
+    "types": ["character", "antagonist"],
     "templates": {
       "base": {
-        "health": {
-          "value": 10,
+        "essence": {
+          "value": 1,
           "min": 0,
           "max": 10
         },
-        "motes": {
-          "value": 0,
-          "min": 0,
-          "max": 5
-        },
-        "biography": ""
+        "health": {
+        }
       }
     },
     "character": {
-      "templates": ["base"]
-
-    },
-    "npc": {
       "templates": ["base"]
     },
     "antagonist": {
