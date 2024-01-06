@@ -38,7 +38,7 @@
   "packFolders": [],
   "socket": false,
   "manifest": "https://github.com/Lukasrygh23/Foundry-ExDemake/blob/SystemChanges/system.json",
-  "download": "This must link to a .zip file of the current version. Doesn't yet.",
+  "download": "https://github.com/Lukasrygh23/Foundry-ExDemake/archive/refs/tags/v0.02.zip",
   "background": "systems/ExDemake/assets/anvil-impact.png",
   "gridDistance": 1,
   "gridUnits": "yd",
