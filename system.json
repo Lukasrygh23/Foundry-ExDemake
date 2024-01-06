@@ -37,11 +37,14 @@
   "packs": [],
   "packFolders": [],
   "socket": false,
-  "manifest": "Replace this with a link to the /latest release system.json so people can receive updates after they've installed the system",
-  "download": "This must link to a .zip file of the current version",
-  "background": "systems/boilerplate/assets/anvil-impact.png",
-  "gridDistance": 5,
-  "gridUnits": "ft",
+SystemChanges
+  "manifest": "https://github.com/Lukasrygh23/Foundry-ExDemake/blob/SystemChanges/system.json",
+  "download": "This must link to a .zip file of the current version. Doesn't yet.",
+  "background": "systems/ExDemake/assets/anvil-impact.png",
+  "gridDistance": 1,
+  "gridUnits": "yd",
+
+master
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "power"
 }

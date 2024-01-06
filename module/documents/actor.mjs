@@ -49,21 +49,32 @@ export class BoilerplateActor extends Actor {
     const systemData = actorData.system;
 
     // Loop through ability scores, and add their modifiers to our sheet output.
-    for (let [key, ability] of Object.entries(systemData.abilities)) {
-      // Calculate the modifier using d20 rules.
-      ability.mod = Math.floor((ability.value - 10) / 2);
-    }
+SystemChanges
+    //for (let [key, ability] of Object.entries(systemData.abilities)) {
+    //   Calculate the modifier using d20 rules.
+    //  ability.mod = Math.floor((ability.value - 10) / 2);
+    // }
+    //TODO REMOVE THIS
   }
 
   /**
    * Prepare NPC type specific data.
-   */
   _prepareNpcData(actorData) {
     if (actorData.type !== 'npc') return;
 
     // Make modifications to data here. For example:
     const systemData = actorData.system;
     systemData.xp = (systemData.cr * systemData.cr) * 100;
+  */
+  
+  /**
+   * Prepare Antagonist Specific Data
+   */
+  
+  _prepareAntagonistData(actorData) {
+    if (actorData.type !== 'antagonist') return;
+
+
   }
 
   /**
@@ -93,17 +104,24 @@ export class BoilerplateActor extends Actor {
       }
     }
 
-    // Add level for easier access, or fall back to 0.
+    // Add level for easier access, or fall back to 0. TODO REMOVE THIS.
     if (data.attributes.level) {
       data.lvl = data.attributes.level.value ?? 0;
     }
+SystemChanges
+    // Add Essence as a shorthand, or fallback to 0. 
+    if (data.base.essence) {
+      data.essence = data.base.essence.value ?? 0;
+    }
   }
 
-  /**
-   * Prepare NPC roll data.
-   */
-  _getNpcRollData(data) {
-    if (this.type !== 'npc') return;
+  _getAntagonistRollData(data) {
+    if (this.type !== 'antagonist') return;
+    if (data.base.essence) {
+      data.essence = data.base.essence.value ?? 0;
+    }
+    //Nothing here yet. 
+
 
     // Process additional NPC data here.
   }
