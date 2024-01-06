@@ -53,7 +53,7 @@ export class DemakeActor extends Actor {
     //   Calculate the modifier using d20 rules.
     //  ability.mod = Math.floor((ability.value - 10) / 2);
     // }
-    //Jesus christ no.
+    //TODO REMOVE THIS
   }
 
   /**
@@ -66,6 +66,11 @@ export class DemakeActor extends Actor {
     const systemData = actorData.system;
     systemData.xp = (systemData.cr * systemData.cr) * 100;
   */
+  
+  /**
+   * Prepare Antagonist Specific Data
+   */
+  
   _prepareAntagonistData(actorData) {
     if (actorData.type !== 'antagonist') return;
 
@@ -98,17 +103,21 @@ export class DemakeActor extends Actor {
       }
     }
 
-    // Add level for easier access, or fall back to 0.
+    // Add level for easier access, or fall back to 0. TODO REMOVE THIS.
     if (data.attributes.level) {
       data.lvl = data.attributes.level.value ?? 0;
     }
     // Add Essence as a shorthand, or fallback to 0. 
-
+    if (data.base.essence) {
+      data.essence = data.base.essence.value ?? 0;
+    }
   }
 
   _getAntagonistRollData(data) {
     if (this.type !== 'antagonist') return;
-
+    if (data.base.essence) {
+      data.essence = data.base.essence.value ?? 0;
+    }
     //Nothing here yet. 
 
   }
