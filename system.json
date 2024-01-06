@@ -43,5 +43,5 @@
   "gridDistance": 1,
   "gridUnits": "yd",
   "primaryTokenAttribute": "health",
-  "secondaryTokenAttribute": "power"
+  "secondaryTokenAttribute": "motes"
 }
