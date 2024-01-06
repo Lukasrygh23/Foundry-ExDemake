@@ -1,6 +1,6 @@
 {
-  "id": "exDemake",
-  "title": "exDemake",
+  "id": "exdemake",
+  "title": "ExDemake",
   "description": "An Attempt at porting Holden Shearer's ExDemake system to Foundry!",
   "authors": [
     {

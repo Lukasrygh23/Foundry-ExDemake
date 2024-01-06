@@ -41,9 +41,9 @@ Hooks.once('init', async function () {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("ExDemake", DemakeActorSheet, { makeDefault: true });
+  Actors.registerSheet("exdemake", DemakeActorSheet, { makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("ExDemake", DemakeItemSheet, { makeDefault: true });
+  Items.registerSheet("exdemake", DemakeItemSheet, { makeDefault: true });
 
   // Preload Handlebars templates.
   return preloadHandlebarsTemplates();
