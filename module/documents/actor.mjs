@@ -58,16 +58,6 @@ SystemChanges
   }
 
   /**
-   * Prepare NPC type specific data.
-  _prepareNpcData(actorData) {
-    if (actorData.type !== 'npc') return;
-
-    // Make modifications to data here. For example:
-    const systemData = actorData.system;
-    systemData.xp = (systemData.cr * systemData.cr) * 100;
-  */
-  
-  /**
    * Prepare Antagonist Specific Data
    */
   
