@@ -36,7 +36,7 @@ export class DemakeActor extends Actor {
     // Make separate methods for each Actor type (character, npc, etc.) to keep
     // things organized.
     this._prepareCharacterData(actorData);
-    this._prepareNpcData(actorData);
+    this._prepareAntagonistData(actorData);
   }
 
   /**
@@ -67,7 +67,7 @@ export class DemakeActor extends Actor {
 
     // Prepare character roll data.
     this._getCharacterRollData(data);
-    this._getNpcRollData(data);
+    this._getAntagonistRollData(data);
 
     return data;
   }
