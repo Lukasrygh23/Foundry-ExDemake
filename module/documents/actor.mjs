@@ -2,7 +2,7 @@
  * Extend the base Actor document by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
  */
-export class BoilerplateActor extends Actor {
+export class DemakeActor extends Actor {
 
   /** @override */
   prepareData() {
@@ -31,7 +31,7 @@ export class BoilerplateActor extends Actor {
   prepareDerivedData() {
     const actorData = this;
     const systemData = actorData.system;
-    const flags = actorData.flags.boilerplate || {};
+    const flags = actorData.flags.demake || {};
 
     // Make separate methods for each Actor type (character, npc, etc.) to keep
     // things organized.
@@ -63,7 +63,6 @@ SystemChanges
   
   _prepareAntagonistData(actorData) {
     if (actorData.type !== 'antagonist') return;
-
 
   }
 
