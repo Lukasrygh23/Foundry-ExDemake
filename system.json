@@ -16,8 +16,8 @@
   "media": [
     {
       "type": "setup",
-      "url": "systems/boilerplate/assets/anvil-impact.png",
-      "thumbnail": "systems/boilerplate/assets/anvil-impact.png"
+      "url": "systems/ExDemake/assets/anvil-impact.png",
+      "thumbnail": "systems/ExDemake/assets/anvil-impact.png"
     }
   ],
   "version": "0.02",
@@ -25,8 +25,8 @@
     "minimum": 11,
     "verified": "11.315"
   },
-  "esmodules": ["module/boilerplate.mjs"],
-  "styles": ["css/boilerplate.css"],
+  "esmodules": ["module/ExDemake.mjs"],
+  "styles": ["css/ExDemake.css"],
   "languages": [
     {
       "lang": "en",
