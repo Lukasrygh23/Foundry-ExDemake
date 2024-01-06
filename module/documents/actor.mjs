@@ -2,7 +2,7 @@
  * Extend the base Actor document by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
  */
-export class BoilerplateActor extends Actor {
+export class DemakeActor extends Actor {
 
   /** @override */
   prepareData() {
@@ -31,7 +31,7 @@ export class BoilerplateActor extends Actor {
   prepareDerivedData() {
     const actorData = this;
     const systemData = actorData.system;
-    const flags = actorData.flags.boilerplate || {};
+    const flags = actorData.flags.demake || {};
 
     // Make separate methods for each Actor type (character, npc, etc.) to keep
     // things organized.
@@ -49,21 +49,26 @@ export class BoilerplateActor extends Actor {
     const systemData = actorData.system;
 
     // Loop through ability scores, and add their modifiers to our sheet output.
-    for (let [key, ability] of Object.entries(systemData.abilities)) {
-      // Calculate the modifier using d20 rules.
-      ability.mod = Math.floor((ability.value - 10) / 2);
-    }
+    //for (let [key, ability] of Object.entries(systemData.abilities)) {
+    //   Calculate the modifier using d20 rules.
+    //  ability.mod = Math.floor((ability.value - 10) / 2);
+    // }
+    //Jesus christ no.
   }
 
   /**
    * Prepare NPC type specific data.
-   */
+   
   _prepareNpcData(actorData) {
     if (actorData.type !== 'npc') return;
 
     // Make modifications to data here. For example:
     const systemData = actorData.system;
     systemData.xp = (systemData.cr * systemData.cr) * 100;
+  */
+  _prepareAntagonistData(actorData) {
+    if (actorData.type !== 'antagonist') return;
+
   }
 
   /**
@@ -97,15 +102,15 @@ export class BoilerplateActor extends Actor {
     if (data.attributes.level) {
       data.lvl = data.attributes.level.value ?? 0;
     }
+    // Add Essence as a shorthand, or fallback to 0. 
+
   }
 
-  /**
-   * Prepare NPC roll data.
-   */
-  _getNpcRollData(data) {
-    if (this.type !== 'npc') return;
+  _getAntagonistRollData(data) {
+    if (this.type !== 'antagonist') return;
 
-    // Process additional NPC data here.
+    //Nothing here yet. 
+
   }
 
 }
