@@ -1,23 +1,23 @@
-export const BOILERPLATE = {};
+export const DEMAKE = {};
 
 /**
  * The set of Ability Scores used within the sytem.
  * @type {Object}
  */
- BOILERPLATE.abilities = {
-  "str": "BOILERPLATE.AbilityStr",
-  "dex": "BOILERPLATE.AbilityDex",
-  "con": "BOILERPLATE.AbilityCon",
-  "int": "BOILERPLATE.AbilityInt",
-  "wis": "BOILERPLATE.AbilityWis",
-  "cha": "BOILERPLATE.AbilityCha"
+ DEMAKE.abilities = {
+  "str": "DEMAKE.AbilityStr",
+  "dex": "DEMAKE.AbilityDex",
+  "con": "DEMAKE.AbilityCon",
+  "int": "DEMAKE.AbilityInt",
+  "wis": "DEMAKE.AbilityWis",
+  "cha": "DEMAKE.AbilityCha"
 };
 
-BOILERPLATE.abilityAbbreviations = {
-  "str": "BOILERPLATE.AbilityStrAbbr",
-  "dex": "BOILERPLATE.AbilityDexAbbr",
-  "con": "BOILERPLATE.AbilityConAbbr",
-  "int": "BOILERPLATE.AbilityIntAbbr",
-  "wis": "BOILERPLATE.AbilityWisAbbr",
-  "cha": "BOILERPLATE.AbilityChaAbbr"
+DEMAKE.abilityAbbreviations = {
+  "str": "DEMAKE.AbilityStrAbbr",
+  "dex": "DEMAKE.AbilityDexAbbr",
+  "con": "DEMAKE.AbilityConAbbr",
+  "int": "DEMAKE.AbilityIntAbbr",
+  "wis": "DEMAKE.AbilityWisAbbr",
+  "cha": "DEMAKE.AbilityChaAbbr"
 };
