@@ -29,9 +29,10 @@ Hooks.once('init', async function() {
    * Set an initiative formula for the system
    * @type {String}
    */
+
+  //I'm gonna need to rip this out later. 
   CONFIG.Combat.initiative = {
-    formula: "1d20 + @abilities.dex.mod",
-    decimals: 2
+    formula: "1d10",
   };
 
   // Define custom Document classes
