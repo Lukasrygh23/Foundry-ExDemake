@@ -13,21 +13,17 @@
           "min": 1,
           "max": 10
         },
-        "motes": {
-          "value": 1,
-          "min": 0,
-          "max": 50
-        },
+
         "biography": ""
       }
     },
     "character": {
       "templates": ["base"],
-      "attributes": {
-      },
-      "abilities": {
-
-      }
+      "motes": {
+                "value": 1,
+                "min": 0,
+                "max": 50
+              }
     },
     "antagonist": {
       "templates": ["base"],
