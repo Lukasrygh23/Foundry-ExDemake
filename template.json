@@ -37,9 +37,7 @@
     },
     "item": {
       "templates": ["base"],
-      "quantity": 1,
-      "weight": 0,
-      "formula": "d20 + @str.mod + ceil(@lvl / 2)"
+      "quantity": 1
     },
     "feature": {
       "templates": ["base"]
