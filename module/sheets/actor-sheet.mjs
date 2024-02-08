@@ -263,8 +263,8 @@ export class DemakeActorSheet extends ActorSheet {
       let rolledDice = 0;
 
       //These two need to be set up. 
-      console.log("The Roll");
-      console.log(roll);
+      //console.log("The Roll");
+      //console.log(roll);
       let totalDice = roll.formula;
       let difficulty = 6;
       /**Use these to debuf it toalDice is not working.
@@ -272,10 +272,10 @@ export class DemakeActorSheet extends ActorSheet {
        console.log(totalDice); */
       //let totalSuccs = 0;
       //let result = "";
-      let { totalSuccs, rollResult } = this.worldOfDarknessRolls(totalDice, difficulty);
+      const results = this.worldOfDarknessRolls(totalDice, difficulty, roll);
       console.log("Results:");
-      console.log(totalSuccs);
-      console.log(rollResult);
+      console.log(results);
+
       /**
       roll.toMessage({
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
@@ -294,7 +294,7 @@ export class DemakeActorSheet extends ActorSheet {
    * @param {*} totalDice 
    * @param {*} difficulty 
    */
-  async worldOfDarknessRolls(totalDice, difficulty) {
+  async worldOfDarknessRolls(totalDice, difficulty, roll) {
     
     const allDice = [];
     let success = 0;
@@ -333,14 +333,21 @@ export class DemakeActorSheet extends ActorSheet {
     else {
       rollResult = "success";
     }
+    /**
     console.log("Roll Result is:");
     console.log(rollResult);
     console.log("Total Successes:");
-    console.log(success);
+    console.log(success);*/
+
     //SOMETHING IS WRONG WITH THE RETURN
-    return {
-      success, rollResult
-    };
+    const objres = { success: success, rollResult: rollResult };
+    /**console.log("creating object");
+    console.log(objres);
+    console.log(objres.success);
+    console.log(objres.rollResult);*/
+
+    //Skip all of this and simply post the roll FROM HERE.
+    return objres;
 
   }
 
