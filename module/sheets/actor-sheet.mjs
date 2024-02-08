@@ -262,12 +262,20 @@ export class DemakeActorSheet extends ActorSheet {
       const allDice = [];
       let rolledDice = 0;
 
-      //These two need to be set up.  
-      let totalDice = roll.totalDice;
+      //These two need to be set up. 
+      console.log("The Roll");
+      console.log(roll);
+      let totalDice = roll.formula;
       let difficulty = 6;
-
-      let totalSuccs = this.worldOfDarknessRolls(totalDice, difficulty);
-
+      /**Use these to debuf it toalDice is not working.
+       console.log("Total Dice value:");
+       console.log(totalDice); */
+      //let totalSuccs = 0;
+      //let result = "";
+      let { totalSuccs, rollResult } = this.worldOfDarknessRolls(totalDice, difficulty);
+      console.log("Results:");
+      console.log(totalSuccs);
+      console.log(rollResult);
       /**
       roll.toMessage({
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
@@ -291,6 +299,7 @@ export class DemakeActorSheet extends ActorSheet {
     const allDice = [];
     let success = 0;
     let rollResult = "";
+    let rolledDice = 0;
 
     while (totalDice > rolledDice) {
       let roll = await new Roll("1d10");
@@ -299,6 +308,9 @@ export class DemakeActorSheet extends ActorSheet {
 
       roll.terms[0].results.forEach((dice) => {
         rolledDice += 1;
+        /** This to debug if dice are BEING rolled.
+        console.log("A dice was rolled")
+        console.log(dice.result);*/
         if (dice.result == 10) {
           success += 1;
         }
@@ -321,6 +333,14 @@ export class DemakeActorSheet extends ActorSheet {
     else {
       rollResult = "success";
     }
+    console.log("Roll Result is:");
+    console.log(rollResult);
+    console.log("Total Successes:");
+    console.log(success);
+    //SOMETHING IS WRONG WITH THE RETURN
+    return {
+      success, rollResult
+    };
 
   }
 
