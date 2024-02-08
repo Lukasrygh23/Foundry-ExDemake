@@ -19,18 +19,39 @@
     },
     "character": {
       "templates": ["base"],
-      "motes": {
-                "value": 1,
-                "min": 0,
-                "max": 50
-              }
+      "resources": {
+        "motes": {
+          "value": 0,
+          "total": 0,
+          "max": 0,
+          "committed": 0
+        },
+        "willpower": {
+          "value": 5,
+          "total": 5,
+          "min": 0,
+          "max": 10
+        }
+      }
     },
     "antagonist": {
       "templates": ["base"],
       "ratings": {
         "expertise": {
+          "value": 4
         },
         "utility": {
+          "value": 2
+        },
+        "basedamage": {
+          "value": 0,
+          "type": "bashing"
+        },
+        "soak": {
+          "value": 0
+        },
+        "resolve": {
+          "value": 0
         },
         "aptitudes": ""
       }

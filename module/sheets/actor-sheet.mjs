@@ -156,6 +156,9 @@ export class DemakeActorSheet extends ActorSheet {
     // Rollable abilities.
     html.find('.rollable').click(this._onRoll.bind(this));
 
+    // WoD Rolls
+    html.find('.promptedroll').click(this.__promptedRoll.bind(this));
+
     // Drag events for macros.
     if (this.actor.isOwner) {
       let handler = ev => this._onDragStart(ev);
@@ -215,8 +218,12 @@ export class DemakeActorSheet extends ActorSheet {
 
     // Handle rolls that supply the formula directly.
     if (dataset.roll) {
-      let label = dataset.label ? `[ability] ${dataset.label}` : '';
+
+      //This line grabs any relevant data from the sheet. 
       let roll = new Roll(dataset.roll, this.actor.getRollData());
+
+      //This puts the text in. 
+      let label = dataset.label ? `Rolling ${dataset.label}` : '';
       roll.toMessage({
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
         flavor: label,
@@ -224,6 +231,97 @@ export class DemakeActorSheet extends ActorSheet {
       });
       return roll;
     }
+  }
+  /**
+   * Handle WoD rolls, with a dialog suggesting difficulty.
+   * @param {Event} event 
+   */
+
+  __promptedRoll(event) {
+    event.preventDefault();
+    const element = event.currentTarget;
+    const dataset = element.dataset;
+
+    //Stealing this part. HAndles item rolls.
+    if (dataset.rollType) {
+      if (dataset.rollType == 'item') {
+        const itemId = element.closest('.item').dataset.itemId;
+        const item = this.actor.items.get(itemId);
+        if (item) return item.roll();
+      }
+    }
+
+    // Handle rolls that supply the formula directly.
+    if (dataset.roll) {
+
+      //This line grabs any relevant data from the sheet. 
+      let roll = new Roll(dataset.roll, this.actor.getRollData());
+
+      //This puts the text in. 
+      let label = dataset.label ? `Rolling ${dataset.label}` : '';
+      const allDice = [];
+      let rolledDice = 0;
+
+      //These two need to be set up.  
+      let totalDice = roll.totalDice;
+      let difficulty = 6;
+
+      let totalSuccs = this.worldOfDarknessRolls(totalDice, difficulty);
+
+      /**
+      roll.toMessage({
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        flavor: label,
+        rollMode: game.settings.get('core', 'rollMode'),
+      }); 
+      * This is the part that I need to replace. 
+      */
+
+      return roll;
+    }
+
+  }
+  /**
+   * 
+   * @param {*} totalDice 
+   * @param {*} difficulty 
+   */
+  async worldOfDarknessRolls(totalDice, difficulty) {
+    
+    const allDice = [];
+    let success = 0;
+    let rollResult = "";
+
+    while (totalDice > rolledDice) {
+      let roll = await new Roll("1d10");
+      roll.evaluate({ async: true });
+      allDice.push(roll);
+
+      roll.terms[0].results.forEach((dice) => {
+        rolledDice += 1;
+        if (dice.result == 10) {
+          success += 1;
+        }
+        else if (dice.result >= difficulty) {
+          success += 1;
+        }
+        else if (dice.result == 1) {
+          success--;
+        }
+
+      }); //End of for loop.
+
+    } //End of while loop.
+    if (success == 0) {
+      rollResult = "fail";
+    }
+    else if (success <= 0) {
+      rollResult = "botch";
+    }
+    else {
+      rollResult = "success";
+    }
+
   }
 
 }
