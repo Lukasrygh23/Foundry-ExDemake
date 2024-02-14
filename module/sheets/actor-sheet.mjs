@@ -338,16 +338,35 @@ export class DemakeActorSheet extends ActorSheet {
     console.log(rollResult);
     console.log("Total Successes:");
     console.log(success);*/
+    console.log(allDice);
+    //This may not work yet.
 
-    //SOMETHING IS WRONG WITH THE RETURN
-    const objres = { success: success, rollResult: rollResult };
-    /**console.log("creating object");
-    console.log(objres);
-    console.log(objres.success);
-    console.log(objres.rollResult);*/
+    const templateData = {
+      data: 
+      {
+        actor: roll.actor,
+        type: roll.origin,
+        action: roll.action,
+        title: rollInfo
+      }
+    };
+    const template = ''; //I need to define this and steal a template.
+    const html = await renderTemplate(template, templateData);
+    
+    const chatData = {
+      type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+      rolls: allDice,
+      content: html,
+      speaker: ChatMessage.getSpeaker({ actor: actor }),
+      rollMode: game.settings.get("core", "rollMode")
+    };
+    ChatMessage.applyRollMode(chatData, "roll");
+    ChatMessage.create(chatData);
+
 
     //Skip all of this and simply post the roll FROM HERE.
-    return objres;
+    
+    return rollResult;
 
   }
 
