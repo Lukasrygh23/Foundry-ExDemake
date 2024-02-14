@@ -300,6 +300,7 @@ export class DemakeActorSheet extends ActorSheet {
     let success = 0;
     let rollResult = "";
     let rolledDice = 0;
+    let rollInfo = "";
 
     while (totalDice > rolledDice) {
       let roll = await new Roll("1d10");
@@ -347,26 +348,29 @@ export class DemakeActorSheet extends ActorSheet {
         actor: roll.actor,
         type: roll.origin,
         action: roll.action,
-        title: rollInfo
+        title: rollInfo,
+        info: "",
+        multipleResult: []
       }
     };
-    const template = ''; //I need to define this and steal a template.
+    const template = 'systems/exdemake/templates/actor/roll-template.html';
     const html = await renderTemplate(template, templateData);
     
     const chatData = {
       type: CONST.CHAT_MESSAGE_TYPES.ROLL,
       rolls: allDice,
       content: html,
-      speaker: ChatMessage.getSpeaker({ actor: actor }),
+      speaker: ChatMessage.getSpeaker(),
       rollMode: game.settings.get("core", "rollMode")
     };
+    
     ChatMessage.applyRollMode(chatData, "roll");
     ChatMessage.create(chatData);
-
+    
 
     //Skip all of this and simply post the roll FROM HERE.
-    
-    return rollResult;
+    const objres = { success: success, rollResult: rollResult };
+    return objres;
 
   }
 
